@@ -7369,6 +7369,53 @@ html body #page6 p.center.look-ahead-intro {
     -webkit-text-fill-color: #f5dfea !important;
 }
 
+/* FORCE MUSIC PLAYER TO SHOW ON MOBILE & TABLET */
+.audio-container {
+    position: fixed !important;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+
+    left: 50% !important;
+    right: auto !important;
+    bottom: calc(12px + env(safe-area-inset-bottom)) !important;
+    transform: translateX(-50%) !important;
+
+    width: calc(100% - 24px) !important;
+    max-width: 320px !important;
+    height: auto !important;
+
+    z-index: 2147483647 !important;
+    overflow: visible !important;
+}
+
+.audio-container audio {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 320px !important;
+    height: 44px !important;
+}
+
+/* MOBILE & TABLET */
+@media screen and (max-width: 1024px) {
+    .audio-container {
+        display: flex !important;
+        position: fixed !important;
+        bottom: calc(12px + env(safe-area-inset-bottom)) !important;
+    }
+
+    .audio-container audio {
+        display: block !important;
+        height: 44px !important;
+    }
+}
+
 </style>
 
 </html>
